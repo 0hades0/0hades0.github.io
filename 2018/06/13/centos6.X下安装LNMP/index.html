@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://blog.yixingyun.top">
-  <title>Archives | 洛枫的博客</title>
+  <title>洛枫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="###centos6.X下安装LNMP一、安装前1、安装nginx一些依赖包1yum -y install gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel wget vim 2、安装epel1234567wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-">
+<meta property="og:type" content="article">
 <meta property="og:title" content="洛枫的博客">
-<meta property="og:url" content="http://blog.yixingyun.top/archives/index.html">
+<meta property="og:url" content="http://blog.yixingyun.top/2018/06/13/centos6.X下安装LNMP/index.html">
 <meta property="og:site_name" content="洛枫的博客">
+<meta property="og:description" content="###centos6.X下安装LNMP一、安装前1、安装nginx一些依赖包1yum -y install gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel wget vim 2、安装epel1234567wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-13T11:17:18.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="洛枫的博客">
+<meta name="twitter:description" content="###centos6.X下安装LNMP一、安装前1、安装nginx一些依赖包1yum -y install gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel wget vim 2、安装epel1234567wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-">
   
     <link rel="alternative" href="/atom.xml" title="洛枫的博客" type="application/atom+xml">
   
@@ -154,81 +158,198 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-centos6.X下安装LNMP" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###centos6.X下安装LNMP<br>一、安装前<br>1、安装nginx一些依赖包<br><figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc gcc-c++ pcre pcre-devel <span class="literal">zlib</span> <span class="literal">zlib</span>-devel openssl openssl-devel wget vim</span><br></pre></td></tr></table></figure></p>
+<p>2、安装epel<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm  </span></span><br><span class="line">rpm -ivh epel-release<span class="number">-5</span><span class="number">-4.</span>noarch.rpm  </span><br><span class="line">```  </span><br><span class="line">二、安装nginx  </span><br><span class="line"><span class="number">1</span>、用yum安装nginx    </span><br><span class="line">```  </span><br><span class="line">yum -y install nginx</span><br></pre></td></tr></table></figure></p>
+<p>2、设置nginx开机启动<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chkconfig nginx on  </span><br><span class="line">```  </span><br><span class="line"><span class="number">3</span>、启动nginx</span><br></pre></td></tr></table></figure></p>
+<p>service nginx start<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">三、安装php  </span><br><span class="line"><span class="number">1</span>、用yum安装php以及php-fpm  </span><br><span class="line">```  </span><br><span class="line">yum -y install php php-fpm  </span><br><span class="line">```  </span><br><span class="line"><span class="number">2</span>、设置pph-fpm开机启动</span><br></pre></td></tr></table></figure></p>
+<p>chkconfig php-fpm on<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">3、启动php-fpm  </span><br><span class="line">```  </span><br><span class="line">service php-fpm start</span><br><span class="line">``` </span><br><span class="line">四、安装mysql</span><br></pre></td></tr></table></figure></p>
+<p>yum -y install mysql mysql-server<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">###配置  </span><br><span class="line"><span class="number">1</span>、配置nginx</span><br></pre></td></tr></table></figure></p>
+<p> cd /etc/nginx/conf.d/<br> mv default.conf default.conf.bak<br> vim default.conf<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加如下内容：</span><br></pre></td></tr></table></figure></p>
+<p>server{<br>    listen      80;<br>    server_name _;<br>    index index.php index.html index.htm;<br>    root  /var/www;</p>
+<pre><code>location ~ .*\.(php|php5)?$
+{
+        #fastcgi_pass  unix:/tmp/php-cgi.sock;
+        fastcgi_pass  127.0.0.1:9000;
+        fastcgi_index index.php;
+        include fastcgi.conf;
+}
+
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+</code></pre><p>}<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果是要设置为<span class="keyword">https</span>的要添加如下代码：</span><br></pre></td></tr></table></figure></p>
+<p>server{<br>    listen      443;<br>    ssl on;<br>    ssl_certificate 1_bb.taobao666.club_bundle.crt;<br>    ssl_certificate_key 2_bb.taobao666.club.key;<br>    server_name _;<br>    index index.php index.html index.htm;<br>    root  /var/www;</p>
+<pre><code>location ~ .*\.(php|php5)?$
+{
+        #fastcgi_pass  unix:/tmp/php-cgi.sock;
+        fastcgi_pass  127.0.0.1:9000;
+        fastcgi_index index.php;
+        include fastcgi.conf;
+}
+
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+</code></pre><p>}<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>、配置php-fpm</span><br></pre></td></tr></table></figure></p>
+<p>vim /etc/php-fpm.d/<a href="http://www.conf" target="_blank" rel="noopener">www.conf</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将用户和用户组改为nginx</span><br></pre></td></tr></table></figure></p>
+<p>user = nginx<br>group = nginx<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">###开始测试</span><br></pre></td></tr></table></figure></p>
+<p>vim /var/www/index.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加如下代码</span><br></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>phpinfo();<br>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">设置权限</span><br></pre></td></tr></table></figure></p>
+<p>chown -R nginx:nginx /var/www<br><code>`</code><br>重启nginx和php-fpm就可以了。  </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/13/centos6.X下安装LNMP/" class="archive-article-date">
-  	<time datetime="2018-06-13T11:17:18.325Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://blog.yixingyun.top/2018/06/13/centos6.X下安装LNMP/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/05/任思绪纷飞，书写一份懂得/" class="archive-article-date">
-  	<time datetime="2018-02-05T06:49:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/05/任思绪纷飞，书写一份懂得/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">任思绪纷飞，书写一份懂得</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/05/任思绪纷飞，书写一份懂得/">任思绪纷飞，书写一份懂得</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-心情</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
+  <div id="SOHUCS" sid="centos6.X下安装LNMP" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyts4PJEl",
+        conf: "233a405d8c19fe6fb1873bc4bf192cf9"
+    });
+</script>
+</script>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -251,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
